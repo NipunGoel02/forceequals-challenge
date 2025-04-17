@@ -30,11 +30,6 @@ A minimal UI to interact with the above API.
 - 📊 View companies with match scores
 - ✅ Mark/unmark companies as targets
 
-### ⚙️ Tech Used:
-- React
-- Axios
-- Tailwind CSS (if used)
-- Vite
 
 ---
 
