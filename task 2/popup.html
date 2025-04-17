@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Widget</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>LinkedIn Profile Widget</h1>
+    <p>Toggle the widget visibility on LinkedIn profiles.</p>
+    <button id="toggle-widget">Toggle Widget</button>
+
+    <script>
+        document.getElementById('toggle-widget').addEventListener('click', () => {
+            chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+                chrome.scripting.executeScript({
+                    target: {tabId: tabs[0].id},
+                    function: toggleWidgetVisibility
+                });
+            });
+        });
+
+        function toggleWidgetVisibility() {
+            const widget = document.querySelector('div');
+            if (widget) {
+                widget.style.display = widget.style.display === 'none' ? 'block' : 'none';
+            }
+        }
+    </script>
+</body>
+</html>

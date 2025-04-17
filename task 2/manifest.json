@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Profile Widget",
+  "version": "1.0",
+  "description": "Injects a widget into LinkedIn profiles to display company information.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/in/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "linkedin (3).png",
+      "64": "linkedin (4).png",
+      "128": "linkedin (5).png"
+      
+    }
+  },
+  "icons": {
+    "16": "linkedin (3).png",
+    "64": "linkedin (4).png",
+    "128": "linkedin (5).png"
+  }
+}
